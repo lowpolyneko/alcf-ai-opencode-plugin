@@ -1,0 +1,26 @@
+name: Publish alcf-ai-opencode-plugin to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Update npm
+        run: npm install -g npm@latest
+      - name: Publish to npm
+        run: npm publish --provenance --access public

@@ -1,0 +1,30 @@
+{
+  "name": "alcf-ai-opencode-plugin",
+  "version": "0.1.0",
+  "description": "opencode plugin that injects a freshly refreshed ALCF AI access token into inference requests",
+  "author": "Ethan Wong <ewong@anl.gov>",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./server": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "plugin",
+    "alcf",
+    "auth"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowpolyneko/alcf-ai-opencode-plugin.git"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
