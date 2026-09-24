@@ -4,7 +4,7 @@ import { promisify } from "node:util";
 const execFileAsync = promisify(execFile);
 
 const DEFAULT_TOKEN_HELPER = ["uvx", "alcf-ai", "auth", "get-access-token"];
-const DEFAULT_TTL_MS = 48 * 60 * 60 * 1000;
+const DEFAULT_TTL_MS = 60 * 1000;
 
 /**
  * Injects a refreshed ALCF access token into every request sent to an ALCF
@@ -12,7 +12,7 @@ const DEFAULT_TTL_MS = 48 * 60 * 60 * 1000;
  *
  * Options:
  *   tokenHelper: string[]  Command + args that print an access token on stdout.
- *   ttlMs: number          How long a fetched token is reused. Default: 48 h.
+ *   ttlMs: number          How long a fetched token is reused. Default: 60 s.
  */
 const server = async (_input, options = {}) => {
   const tokenHelper =
