@@ -1,6 +1,6 @@
 {
   "name": "alcf-ai-opencode-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "opencode plugin that injects a freshly refreshed ALCF AI access token into inference requests",
   "author": "Ethan Wong <ewong@anl.gov>",
   "type": "module",
