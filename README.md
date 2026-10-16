@@ -4,7 +4,22 @@
 and injects it into requests sent to ALCF inference providers
 (`alcf-inference-service-*`).
 
-`alcf-ai agent configure opencode` registers this plugin for you:
+`alcf-ai agent configure opencode` registers this plugin for you.
+
+OpenCode 2 (native `plugins` array):
+
+```json
+{
+  "plugins": [
+    {
+      "package": "alcf-ai-opencode-plugin",
+      "options": { "tokenHelper": ["alcf-ai", "auth", "get-access-token"] }
+    }
+  ]
+}
+```
+
+OpenCode 1 (`plugin` array with a package-and-options tuple):
 
 ```json
 {
@@ -16,6 +31,9 @@ and injects it into requests sent to ALCF inference providers
   ]
 }
 ```
+
+Both entrypoints live in one package: OpenCode 1 calls `server()`, OpenCode 2
+calls `setup(ctx)`. No option changes between them.
 
 ## Options
 
